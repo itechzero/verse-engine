@@ -50,7 +50,7 @@ func (s *Stack) MustRun() {
 
 func (s *Stack) MustClose() {
 	closeOnce.Do(func() {
-		for i := len(s.providers); i >= 0; i-- {
+		for i := len(s.providers) - 1; i >= 0; i-- {
 			name := p.Name(s.providers[i])
 			logrus.Debugf("[Stack] Provider [%s] is closing", name)
 
