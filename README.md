@@ -7,9 +7,5 @@ This is a library of common functions for Go.
 ## Installation
 GitHub:
 ```bash
-
-```
-Coding.net:
-```bash
-
+go get -u github.com/itechzero/lib-core-go
 ```
