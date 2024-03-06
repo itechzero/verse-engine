@@ -24,29 +24,28 @@ func New(config *Config) *MySQL {
 	}
 }
 
-func (p *MySQL) Enabled() bool {
-	return p.config.enabled
+func (m *MySQL) Enabled() bool {
+	return m.config.enabled
 }
 
-func (p *MySQL) Init() error {
-	db, err := gorm.Open(mysql.Open(p.config.dsn), &gorm.Config{})
+func (m *MySQL) Init() error {
+	db, err := gorm.Open(mysql.Open(m.config.dsn), &gorm.Config{})
 	if err != nil {
 		logrus.WithError(err).Error("[MySQL] Connect failed")
 		return err
 	}
 
-	p.conn = db
-
-	logrus.WithField("dsn", p.DSN()).Debug("[MySQL] initialized")
+	m.conn = db
+	logrus.WithField("dsn", m.config.dsn).Debug("[MySQL] initialized")
 
 	return nil
 }
 
-func (p *MySQL) Close() error {
-	db, _ := p.conn.DB()
+func (m *MySQL) Close() error {
+	db, _ := m.conn.DB()
 	return db.Close()
 }
 
-func (p *MySQL) DSN() string {
-	return p.config.dsn
+func (m *MySQL) Client() *gorm.DB {
+	return m.conn
 }
