@@ -9,8 +9,8 @@ import (
 )
 
 const (
-	DSNKey = "MYSQL_DSN"
-
+	EnabledKey  = "MYSQL_ENABLED"
+	DSNKey      = "MYSQL_DSN"
 	HostKey     = "MYSQL_HOST"
 	UserKey     = "MYSQL_USER"
 	PwdKey      = "MYSQL_PASSWORD"
@@ -43,6 +43,7 @@ type Config struct {
 func NewConfig() *Config {
 	v := viper.New()
 
+	v.SetDefault(EnabledKey, false)
 	v.SetDefault(HostKey, "127.0.0.1:3306")
 	v.SetDefault(DatabaseKey, "")
 	v.SetDefault(UserKey, "root")
@@ -58,8 +59,8 @@ func NewConfig() *Config {
 	common.LoadFromFile(v)
 
 	config := &Config{
-		dsn: v.GetString(DSNKey),
-
+		enabled:  v.GetBool(EnabledKey),
+		dsn:      v.GetString(DSNKey),
 		Host:     v.GetString(HostKey),
 		User:     v.GetString(UserKey),
 		Pwd:      v.GetString(PwdKey),

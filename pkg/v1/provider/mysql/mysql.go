@@ -29,6 +29,10 @@ func (m *MySQL) Enabled() bool {
 }
 
 func (m *MySQL) Init() error {
+	if !m.Enabled() {
+		return nil
+	}
+
 	db, err := gorm.Open(mysql.Open(m.config.dsn), &gorm.Config{})
 	if err != nil {
 		logrus.WithError(err).Error("[MySQL] Connect failed")
