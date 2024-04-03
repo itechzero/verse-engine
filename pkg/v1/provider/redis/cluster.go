@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/go-redis/redis/v8"
-	"github.com/itechzero/lib-core-go/pkg/v1/provider"
+	"github.com/itechzero/verse-engine/pkg/v1/provider"
 )
 
 var _ provider.Provider = new(Cluster)

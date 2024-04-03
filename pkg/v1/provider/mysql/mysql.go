@@ -1,7 +1,7 @@
 package mysql
 
 import (
-	"github.com/itechzero/lib-core-go/pkg/v1/provider"
+	"github.com/itechzero/verse-engine/pkg/v1/provider"
 	"github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

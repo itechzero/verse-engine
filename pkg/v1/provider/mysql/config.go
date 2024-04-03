@@ -3,7 +3,7 @@ package mysql
 import (
 	"time"
 
-	"github.com/itechzero/lib-core-go/pkg/v1/common"
+	"github.com/itechzero/verse-engine/pkg/v1/common"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )

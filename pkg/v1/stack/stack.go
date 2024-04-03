@@ -5,7 +5,7 @@ import (
 	"os/signal"
 	"sync"
 
-	p "github.com/itechzero/lib-core-go/pkg/v1/provider"
+	p "github.com/itechzero/verse-engine/pkg/v1/provider"
 
 	"github.com/sirupsen/logrus"
 )
