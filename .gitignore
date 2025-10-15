@@ -1,0 +1,43 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.a
+*.DS_Store
+*.DS_Store?
+*.mmdb
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+*.log
+
+# rsa key
+*.crt
+*.key
+
+output
+bin
+.bin
+main
+cli
+
+# Vendor
+vendor
+node_modules
+
+# IDE
+.git
+.idea
+.vscode
+.task
+.netrc
+
+# Config
+*config.yaml
+*config.json
+*.conf
